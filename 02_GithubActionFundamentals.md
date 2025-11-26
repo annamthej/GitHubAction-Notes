@@ -576,5 +576,122 @@ This knowledge is essential before we build:
 * Kubernetes deployment
 * Azure integration
 
+  ### Nodejs Code
+  Sure! Here is a **simple Node.js project** you can use for GitHub Actions, CI/CD, Docker, or any tutorial.
+
+I'll give you:
+
+✔ Folder structure
+✔ package.json
+✔ index.js
+✔ a simple test
+✔ .gitignore
+
+---
+
+# 📁 **Project Structure**
+
+```
+simple-node-app/
+│
+├── package.json
+├── index.js
+├── .gitignore
+└── test/
+    └── app.test.js
+```
+
+---
+
+# 📦 **package.json**
+
+```json
+{
+  "name": "simple-node-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app for GitHub Actions demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
+```
+
+---
+
+# 🟩 **index.js**
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+
+console.log("App is running… Sum(2,3) =", sum(2, 3));
+
+module.exports = sum;
+```
+
+---
+
+# 🧪 **test/app.test.js**
+
+```js
+const sum = require('../index');
+
+test('adds 2 + 3 = 5', () => {
+  expect(sum(2, 3)).toBe(5);
+});
+```
+
+---
+
+# 📝 **.gitignore**
+
+```
+node_modules/
+npm-debug.log
+.env
+```
+
+---
+
+# 🚀 Want GitHub Actions workflow too?
+
+Here’s a simple workflow for CI:
+
+```yaml
+name: Node.js CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+```
+
+---
+
+
+
 ---
 
